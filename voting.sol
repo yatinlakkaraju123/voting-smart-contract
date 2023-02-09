@@ -13,14 +13,14 @@ contract voting{
 
     mapping(address=>Voters) public voters;
     struct Candidates{
-        bytes32 candidate_name;
+        string  candidate_name;
         
         uint no_of_votes;
     }
 
     Candidates[]  public candidates;
 
-    constructor(bytes32[] memory members)  {
+    constructor(string[] memory members)  {
             chairperson = msg.sender;
             voters[chairperson].weight = 1;
             for(uint i=0;i<members.length;i++)
